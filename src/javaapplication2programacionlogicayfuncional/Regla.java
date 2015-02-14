@@ -5,6 +5,7 @@ package javaapplication2programacionlogicayfuncional;
  */
 public class Regla {
     int id;
+    boolean valor;
     String cosecuente;
     Regla antecedente[][];
     public Regla(String cosecuente,int i){
@@ -13,10 +14,12 @@ public class Regla {
     }
     public void AgregaAntecedente(Regla[] reglas){//solo agrega 1 linea, es solamente para conjunciones
         this.antecedente[0]=reglas;
-
+        
     }
     private void Conjuncion(){
-        
+        for(Regla temp:antecedente[0]){
+            
+        }
         
     }
     
