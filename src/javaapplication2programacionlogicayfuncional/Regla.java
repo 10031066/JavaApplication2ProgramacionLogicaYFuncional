@@ -5,7 +5,8 @@ package javaapplication2programacionlogicayfuncional;
  */
 public class Regla {
     int id;
-    boolean valor;
+    private boolean valor;
+    private boolean visitado;
     String cosecuente;
     Regla antecedente[][];
     public Regla(String cosecuente,int i){
@@ -16,11 +17,24 @@ public class Regla {
         this.antecedente[0]=reglas;
         
     }
-    private void Conjuncion(){
-        for(Regla temp:antecedente[0]){
-            
-        }
-        
+    public void Verdadero(){
+        valor=true;
+        visitado=true;
     }
-    
+    public boolean Resuelve(){
+        if(!visitado){
+            visitado=true;
+            boolean regresa=true;
+            for(Regla temp:antecedente[0]){
+                boolean temporal =temp.Resuelve();
+                if(!temporal){
+                    regresa=false;
+                }
+            }
+            valor = regresa;
+            return valor;
+        }else{
+            return valor;
+        }
+    }
 }
