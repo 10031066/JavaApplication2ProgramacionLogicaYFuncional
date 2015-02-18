@@ -21,12 +21,12 @@ public class Regla {
         valor=true;
         visitado=true;
     }
-    public boolean Resuelve(){
+    public boolean Atras(){
         if(!visitado){
             visitado=true;
             boolean regresa=true;
             for(Regla temp:antecedente[0]){
-                boolean temporal =temp.Resuelve();
+                boolean temporal =temp.Atras();
                 if(!temporal){
                     regresa=false;
                 }
